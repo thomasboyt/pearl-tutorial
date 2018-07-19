@@ -1,4 +1,4 @@
-import { Component, Physical, PolygonCollider, Keys, AudioAsset } from 'pearl';
+import { Component, Physical, BoxCollider, Keys, AudioAsset } from 'pearl';
 
 export default class Player extends Component<null> {
   playerSpeed = 0.1;
@@ -42,8 +42,8 @@ export default class Player extends Component<null> {
     if (
       enemy &&
       enemy
-        .getComponent(PolygonCollider)
-        .isColliding(this.getComponent(PolygonCollider))
+        .getComponent(BoxCollider)
+        .isColliding(this.getComponent(BoxCollider))
     ) {
       if (this.hasSword) {
         this.pearl.audio.play(this.pearl.assets.get(AudioAsset, 'hitSound'));
@@ -58,8 +58,8 @@ export default class Player extends Component<null> {
 
       if (
         sword
-          .getComponent(PolygonCollider)
-          .isColliding(this.getComponent(PolygonCollider))
+          .getComponent(BoxCollider)
+          .isColliding(this.getComponent(BoxCollider))
       ) {
         this.hasSword = true;
         this.gameObject.appendChild(sword);

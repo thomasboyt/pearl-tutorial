@@ -3,8 +3,8 @@ import {
   createPearl,
   GameObject,
   Physical,
-  PolygonCollider,
-  PolygonRenderer,
+  BoxCollider,
+  BoxRenderer,
   Sprite,
   SpriteRenderer,
   ImageAsset,
@@ -38,12 +38,12 @@ class Game extends Component<null> {
             },
           }),
 
-          PolygonCollider.createBox({
+          new BoxCollider({
             width: 20,
             height: 20,
           }),
 
-          new PolygonRenderer({
+          new BoxRenderer({
             fillStyle: 'cyan',
           }),
 
@@ -65,12 +65,12 @@ class Game extends Component<null> {
             },
           }),
 
-          PolygonCollider.createBox({
+          new BoxCollider({
             width: 40,
             height: 40,
           }),
 
-          new PolygonRenderer({
+          new BoxRenderer({
             fillStyle: 'red',
           }),
         ],
@@ -89,7 +89,7 @@ class Game extends Component<null> {
             },
           }),
 
-          PolygonCollider.createBox({
+          new BoxCollider({
             width: swordSprite.width,
             height: swordSprite.height,
           }),
